@@ -1,19 +1,45 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.glm",
 	"name": "GolemScript",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#variables"
+		},
+		{
+			"include": "#commands"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
 		}
 	],
 	"repository": {
+		"commands": {
+			"patterns": [
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#instruction_names"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.golemscript",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(let|if|while|end)\\b"
+			}]
+		},
+		"instruction_names": {
+			"patterns": [{
+				"name": "keyword.control.golemscript",
+				"match": "\\b(move|place|getblock|print|sleep)\\b"
 			}]
 		},
 		"strings": {
@@ -26,7 +52,48 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.hash.golemscript",
+					"match": "#.*"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.golemscript",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"include": "#variable_declarations"
+				},
+				{
+					"include": "#variable_references"
+				}
+			]
+		},
+		"variable_references": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.golemscript",
+					"match": "\\$\\w+\\b"
+				}
+			]
+		},
+		"variable_declarations": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.golemscript",
+					"match": "(?<=let )\"\\w+\""
+				}
+			]
 		}
-	},
-	"scopeName": "source.glm"
+	}
 }
