@@ -1,0 +1,25 @@
+{
+  "name": "golemscript",
+  "displayName": "GolemScript",
+  "description": "A fully functional programming language running with Minecraft datapacks",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "golemscript",
+      "aliases": ["GolemScript", "golemscript"],
+      "extensions": [".glm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "golemscript",
+      "scopeName": "source.glm",
+      "path": "./syntaxes/golemscript.tmLanguage.json"
+    }]
+  }
+}
