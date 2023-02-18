@@ -16,6 +16,9 @@
 			"include": "#comments"
 		},
 		{
+			"include": "#object_keys"
+		},
+		{
 			"include": "#numbers"
 		}
 	],
@@ -91,7 +94,15 @@
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.golemscript",
-					"match": "(?<=let )\"\\w+\""
+					"match": "(?<=let )[\\w-]+"
+				}
+			]
+		},
+		"object_keys": {
+			"patterns": [
+				{
+					"name": "variable.other.property.golemscript",
+					"match": "[\\w-]+(?=:)"
 				}
 			]
 		}
