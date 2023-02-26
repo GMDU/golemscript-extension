@@ -1,10 +1,10 @@
 {
   "name": "golemscript",
   "displayName": "GolemScript",
-  "description": "A fully functional programming language running with Minecraft datapacks",
-  "version": "0.0.1",
+  "description": "Syntax highlighting for the GolemScript language",
+  "version": "0.1.0",
   "engines": {
-    "vscode": "^1.54.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Programming Languages"
@@ -20,15 +20,10 @@
       "language": "golemscript",
       "scopeName": "source.glm",
       "path": "./syntaxes/golemscript.tmLanguage.json"
-    }],
-    "commands": [
-      {
-        "command": "test.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    }]
   },
   "main": "./out/extension.js",
+  "activationEvents": [],
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
