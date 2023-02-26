@@ -1,5 +1,3 @@
-# GolemScript README
-
 ## Features
 
 - Syntax highlighting for the GolemsScript programming language
