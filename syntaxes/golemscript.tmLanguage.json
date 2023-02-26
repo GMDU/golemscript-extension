@@ -88,7 +88,7 @@
 		"reserved_variables": {
 			"patterns": [
 				{
-					"name": "entity.name.namespace.golemscript",
+					"name": "variable.other.constant.golemscript",
 					"match": "\\$?\\b(BLOCK|POS|INVENTORY)\\b"
 				}
 			]
