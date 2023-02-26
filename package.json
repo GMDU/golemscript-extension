@@ -2,6 +2,7 @@
   "name": "golemscript",
   "displayName": "GolemScript",
   "description": "Syntax highlighting for the GolemScript language",
+  "publisher": "GMDU",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.75.0"
