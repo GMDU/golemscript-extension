@@ -4,9 +4,6 @@
 	"name": "GolemScript",
 	"patterns": [
 		{
-			"include": "#variables"
-		},
-		{
 			"include": "#commands"
 		},
 		{
@@ -20,6 +17,9 @@
 		},
 		{
 			"include": "#numbers"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
@@ -36,13 +36,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.golemscript",
-				"match": "\\b(let|if|while|end)\\b"
+				"match": "\\b(let|if|while|loop|break|end)\\b"
 			}]
 		},
 		"instruction_names": {
 			"patterns": [{
 				"name": "keyword.control.golemscript",
-				"match": "\\b(move|place|getblock|print|sleep)\\b"
+				"match": "\\b(move|place|getblock|print|sleep|match)\\b"
 			}]
 		},
 		"strings": {
@@ -75,6 +75,9 @@
 		"variables": {
 			"patterns": [
 				{
+					"include": "#reserved_variables"
+				},
+				{
 					"include": "#variable_declarations"
 				},
 				{
@@ -82,11 +85,19 @@
 				}
 			]
 		},
+		"reserved_variables": {
+			"patterns": [
+				{
+					"name": "entity.name.namespace.golemscript",
+					"match": "\\$?\\b(BLOCK|POS|INVENTORY)\\b"
+				}
+			]
+		},
 		"variable_references": {
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.golemscript",
-					"match": "\\$\\w+\\b"
+					"match": "\\$?\\b\\w+\\b"
 				}
 			]
 		},
