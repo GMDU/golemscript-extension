@@ -1,0 +1,27 @@
+{
+  "While Loop": {
+    "prefix": ["while"],
+    "body": ["while $1", "\t$0", "end"],
+    "description": "A while loop."
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if $1", "\t$0", "end"],
+    "description": "An if statement"
+  },
+  "INVENTORY": {
+    "prefix": "$INVENTORY",
+    "body": "\\$INVENTORY",
+    "description": "The inventory variable"
+  },
+  "BLOCK": {
+    "prefix": "$BLOCK",
+    "body": "\\$BLOCK",
+    "description": "The block variable"
+  },
+  "POS": {
+    "prefix": "$POS",
+    "body": "\\$POS",
+    "description": "The pos variable"
+  }
+}

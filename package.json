@@ -25,7 +25,14 @@
       "language": "golemscript",
       "scopeName": "source.glm",
       "path": "./syntaxes/golemscript.tmLanguage.json"
-    }]
+    }],
+    "snippets": [
+      {
+        "language": "golemscript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+
   },
   "main": "./out/extension.js",
   "activationEvents": [],
