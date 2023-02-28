@@ -4,7 +4,7 @@
 	"name": "GolemScript",
 	"patterns": [
 		{
-			"include": "#commands"
+			"include": "#statements"
 		},
 		{
 			"include": "#strings"
@@ -23,24 +23,45 @@
 		}
 	],
 	"repository": {
-		"commands": {
-			"patterns": [
-				{
-					"include": "#keywords"
-				},
-				{
-					"include": "#instruction_names"
-				}
-			]
-		},
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.hash.golemscript",
+          "match": "#.*"
+        }
+      ]
+    },
+    "unknown": {
+      "patterns": [
+        {
+          "name": "meta.unknown.golemscript",
+          "match": "^(.*)$",
+          "captures": {
+            "1": {
+              "name": "invalid.illegal.golemscript"
+            }
+          }
+        }
+      ]
+    },
+    "statements": {
+      "patterns": [
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#instruction_names"
+        }
+      ]
+    },
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.golemscript",
+      "patterns": [{
+        "name": "keyword.control.golemscript",
 				"match": "\\b(let|if|while|loop|break|end)\\b"
-			}]
-		},
-		"instruction_names": {
-			"patterns": [{
+        }]
+      },
+      "instruction_names": {
+        "patterns": [{
 				"name": "keyword.control.golemscript",
 				"match": "\\b(move|place|getblock|print|sleep|match)\\b"
 			}]
@@ -53,14 +74,6 @@
 				{
 					"name": "constant.character.escape.golemscript",
 					"match": "\\\\."
-				}
-			]
-		},
-		"comments": {
-			"patterns": [
-				{
-					"name": "comment.line.hash.golemscript",
-					"match": "#.*"
 				}
 			]
 		},

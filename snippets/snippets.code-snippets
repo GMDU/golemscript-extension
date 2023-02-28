@@ -1,6 +1,6 @@
 {
   "While Loop": {
-    "prefix": ["while"],
+    "prefix": "while",
     "body": ["while $1", "\t$0", "end"],
     "description": "A while loop."
   },
