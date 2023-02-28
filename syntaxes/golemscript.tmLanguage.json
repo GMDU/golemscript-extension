@@ -9,6 +9,9 @@
 		{
 			"include": "#strings"
 		},
+    {
+      "include": "#regexps"
+    },
 		{
 			"include": "#comments"
 		},
@@ -77,6 +80,17 @@
 				}
 			]
 		},
+    "regexps": {
+			"name": "string.regexp.golemscript",
+			"begin": "/",
+			"end": "/",
+			"patterns": [
+				{
+					"name": "constant.character.escape.golemscript",
+					"match": "\\\\."
+				}
+			]
+		},
 		"numbers": {
 			"patterns": [
 				{
@@ -110,7 +124,7 @@
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.golemscript",
-					"match": "\\$?\\b\\w+\\b"
+					"match": "\\$?\\b[A-Za-z]\\w+\\b"
 				}
 			]
 		},
