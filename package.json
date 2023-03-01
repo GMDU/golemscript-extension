@@ -32,7 +32,6 @@
         "path": "./snippets/snippets.code-snippets"
       }
     ]
-
   },
   "main": "./out/extension.js",
   "activationEvents": [],

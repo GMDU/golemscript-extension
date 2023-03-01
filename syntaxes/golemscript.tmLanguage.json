@@ -3,17 +3,17 @@
 	"scopeName": "source.glm",
 	"name": "GolemScript",
 	"patterns": [
-		{
-			"include": "#statements"
-		},
-		{
-			"include": "#strings"
-		},
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
     {
       "include": "#regexps"
     },
 		{
-			"include": "#comments"
+			"include": "#statements"
 		},
 		{
 			"include": "#object_keys"
@@ -65,7 +65,7 @@
       },
       "instruction_names": {
         "patterns": [{
-				"name": "keyword.control.golemscript",
+				"name": "keyword.golemscript",
 				"match": "\\b(move|place|getblock|print|sleep|match)\\b"
 			}]
 		},
