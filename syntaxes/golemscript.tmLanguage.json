@@ -10,6 +10,12 @@
       "include": "#strings"
     },
     {
+      "include": "#resources"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
       "include": "#regexps"
     },
 		{
@@ -51,17 +57,20 @@
       "patterns": [
         {
           "include": "#keywords"
-        },
-        {
-          "include": "#instruction_names"
         }
       ]
     },
 		"keywords": {
-      "patterns": [{
-        "name": "keyword.control.golemscript",
-				"match": "\\b(let|if|while|loop|break|end)\\b"
-        }]
+      "patterns": [
+        {
+          "name": "keyword.control.golemscript",
+          "match": "\\b(if|while|loop|break|next|return|end)\\b"
+        },
+        {
+          "name": "keyword.golemscript",
+          "match": "\\b(let|var|const|func)\\b"
+        }
+      ]
       },
       "instruction_names": {
         "patterns": [{
@@ -77,6 +86,22 @@
 				{
 					"name": "constant.character.escape.golemscript",
 					"match": "\\\\."
+				}
+			]
+		},
+    "resources": {
+			"patterns": [
+				{
+					"name": "constant.language.symbol.golemscript",
+					"match": "(\\b[A-Za-z_]\\w*)?\\:\\b[A-Za-z_]\\w*"
+				}
+			]
+		},
+    "booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.symbol.golemscript",
+					"match": "\\b(true|false)\\b"
 				}
 			]
 		},
@@ -102,21 +127,16 @@
 		"variables": {
 			"patterns": [
 				{
-					"include": "#reserved_variables"
-				},
-				{
 					"include": "#variable_declarations"
 				},
-				{
+        {
+					"include": "#constant_declarations"
+				},
+        {
+          "include": "#function_calls"
+        },
+        {
 					"include": "#variable_references"
-				}
-			]
-		},
-		"reserved_variables": {
-			"patterns": [
-				{
-					"name": "variable.other.constant.golemscript",
-					"match": "\\$?\\b(BLOCK|POS|INVENTORY)\\b"
 				}
 			]
 		},
@@ -124,7 +144,15 @@
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.golemscript",
-					"match": "\\$?\\b[A-Za-z]\\w+\\b"
+					"match": "\\b[A-Za-z]\\w*\\b"
+				}
+			]
+		},
+    "function_calls": {
+			"patterns": [
+				{
+					"name": "entity.name.function.golemscript",
+					"match": "\\b[A-Za-z]\\w*\\b\\s*(?:\\()"
 				}
 			]
 		},
@@ -132,7 +160,15 @@
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.golemscript",
-					"match": "(?<=let )[\\w-]+"
+					"match": "(?<=var\\s+)\\w+"
+				}
+			]
+		},
+    "constant_declarations": {
+			"patterns": [
+				{
+					"name": "variable.other.constant.golemscript",
+					"match": "(?<=const\\s+)\\w+"
 				}
 			]
 		},
@@ -140,7 +176,7 @@
 			"patterns": [
 				{
 					"name": "variable.other.property.golemscript",
-					"match": "[\\w-]+(?=:)"
+					"match": "\\w+(?=:)"
 				}
 			]
 		}
