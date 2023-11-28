@@ -27,12 +27,12 @@
   ],
   "folding": {
     "markers": {
-        "start": "^\\s*(while|if|loop)\\s+.+$",
+        "start": "^\\s*(while|if|loop|func)\\s+.+$",
         "end": "^\\s*end\\s*$"
     }
   },
   "indentationRules": {
-    "increaseIndentPattern": "^\\s*(while|if|loop)\\s+.+$",
+    "increaseIndentPattern": "^\\s*(while|if|loop|func)\\s+.+$",
     "decreaseIndentPattern": "^\\s*end\\s*$"
   }
 }
