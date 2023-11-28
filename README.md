@@ -1,3 +1,5 @@
+# Golemscript
+
 ## Features
 
 - Syntax highlighting for the GolemsScript programming language

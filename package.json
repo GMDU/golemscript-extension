@@ -2,7 +2,7 @@
   "name": "golemscript",
   "displayName": "GolemScript",
   "description": "Syntax highlighting for the GolemScript language",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "GMDU",
   "repository": {
     "url": "https://github.com/GMDU/golemscript-extension"
